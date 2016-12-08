@@ -11,7 +11,7 @@
   },
   "bin": "cli.js",
   "scripts": {
-    "test": "npm run lint && npm run test:actual",
+    "test": "./cli.js lint && ./cli.js test:actual",
     "lint": "eslint *.js",
     "test:actual": "node test.js",
     "echo": "echo \"HI THIS WORKS!\""
