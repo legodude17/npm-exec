@@ -1,0 +1,36 @@
+{
+  "name": "npm-exec",
+  "version": "0.0.0",
+  "description": "A util for just running a npm script",
+  "license": "MIT",
+  "repository": "legodude17/npm-exec",
+  "author": {
+    "name": "legodude17",
+    "email": "legodude17@users.noreply.github.com",
+    "url": "legodude17.github.io"
+  },
+  "bin": "cli.js",
+  "scripts": {
+    "test": "npm run lint && npm run test:actual",
+    "lint": "eslint *.js",
+    "test:actual": "node test.js",
+    "echo": "echo \"HI THIS WORKS!\""
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "npm",
+    "exec"
+  ],
+  "dependencies": {
+    "read": "^1.0.7",
+    "which": "^1.2.12"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1"
+  }
+}
