@@ -14,7 +14,8 @@
     "test": "./cli.js lint && ./cli.js test:actual",
     "lint": "eslint *.js",
     "test:actual": "node test.js",
-    "echo": "echo \"HI THIS WORKS!\""
+    "echo": "echo hi",
+    "cat": "cat"
   },
   "files": [
     "index.js",

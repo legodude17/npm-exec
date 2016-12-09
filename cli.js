@@ -31,8 +31,11 @@ fs.readFile(path.join(process.cwd(), 'package.json'), 'utf-8', function (er, res
 	if (!(pkg && pkg.scripts)) {
 		handleExit(new Error("No package.json or scripts!"))
 	}
+	function exec(cmd, args) {
+		npmExec(cmd, args, pkg, process.cwd(), handleExit)
+	}
 	if (process.argv[2]) {
-		npmExec(process.argv[2], pkg, process.cwd(), handleExit)
+		exec(process.argv[2], process.argv.slice(3))
 	} else {
 		console.log("Possible scripts to run:")
 		console.log('  ' + Object.keys(pkg.scripts).join('\n  '))
@@ -47,7 +50,7 @@ fs.readFile(path.join(process.cwd(), 'package.json'), 'utf-8', function (er, res
 				console.log("Exiting...")
 				process.exit(0)
 			}
-			npmExec(result, pkg, process.cwd(), handleExit)
+			exec(result, [])
 		})
 	}
 })
