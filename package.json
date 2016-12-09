@@ -9,7 +9,9 @@
     "email": "legodude17@users.noreply.github.com",
     "url": "legodude17.github.io"
   },
-  "bin": "cli.js",
+  "bin": {
+    "npm-exec": "cli.js"
+  },
   "scripts": {
     "test": "./cli.js lint && ./cli.js test:actual",
     "lint": "eslint *.js",
