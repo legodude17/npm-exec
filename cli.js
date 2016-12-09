@@ -34,7 +34,22 @@ fs.readFile(path.join(process.cwd(), 'package.json'), 'utf-8', function (er, res
 	function exec(cmd, args) {
 		npmExec(cmd, args, pkg, process.cwd(), handleExit)
 	}
-	if (process.argv[2]) {
+	if (process.argv[2] === '--help') {
+		console.log([
+			'Usage',
+    	'npm-exec [name] [args...]',
+			'',
+  		'Arguments',
+    	'  name: Name of script to run or executable',
+			'    If not provided, npm-exec will prompt you to give it a name',
+			'  args: Arguments for the script [Default: None]',
+			'',
+  		'Examples',
+    	'  $ npm-exec',
+			'  $ npm-exec test',
+			'  $ npm-exec eslint *.js'
+		].join('\n'))
+	}else if (process.argv[2]) {
 		exec(process.argv[2], process.argv.slice(3))
 	} else {
 		console.log("Possible scripts to run:")
