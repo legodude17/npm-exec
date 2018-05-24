@@ -21,7 +21,7 @@
 ##  1. <a name='Install'></a>Install
 
 ```
-$ npm install --save npm-exec
+$ npm install --save standalone-npm-exec
 ```
 
 
